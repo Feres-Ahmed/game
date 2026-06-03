@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #1e1e2f, #0f172a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    width: 460px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    padding: 20px;
+}
+
+
+.cards {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    transform-style: preserve-3d;
+}
+
+.cards:hover {
+    transform: scale(1.1) rotate(2deg);
+}
+
+
+.cards.open {
+    background: linear-gradient(145deg, #4caf50, #2e7d32);
+    color: white;
+    transform: rotateY(180deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+
+@keyframes pop {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cards {
+    animation: pop 0.3s ease;
+}
